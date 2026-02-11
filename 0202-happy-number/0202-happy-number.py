@@ -1,15 +1,24 @@
 class Solution:
-    def isHappy(self, n: int) -> bool:
-        string=str(n)
-        for i in range(1,100):
-            count=0
-            for i in string:
-                count+=int(i)**2
-            if count==1 or count==7:
-                return True
-            elif count==n:
-                return False
-            string=str(count)
-        return False
+    def isHappy(self, n: int) -> bool:    
+        
+        def get_next_number(n):    
+            output = 0
+            
+            while n:
+                digit = n % 10
+                output += digit ** 2
+                n = n // 10
+            
+            return output
+
+        slow = get_next_number(n)
+        fast = get_next_number(get_next_number(n))
+
+        while slow != fast:
+            if fast == 1: return True
+            slow = get_next_number(slow)
+            fast = get_next_number(get_next_number(fast))
+
+        return slow == 1
 
         

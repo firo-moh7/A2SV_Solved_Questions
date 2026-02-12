@@ -12,7 +12,7 @@ class Solution:
                     doubled_num.append(num)
                     freq[2*num]-=1
 
-            if len(doubled_num)==len(changed)//2:  
+        if len(doubled_num)==len(changed)//2:  
                 return doubled_num
 
         return []

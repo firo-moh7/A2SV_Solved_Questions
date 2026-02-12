@@ -1,9 +1,9 @@
 class Solution:
     def findValidPair(self, s: str) -> str:
-        freq=Counter(s)
-        temp=[]
         if len(set(s))==1:
             return ""
+        freq=Counter(s)
+        temp=[]
         ans=""
 
         for i in range(len(s)):
@@ -15,9 +15,8 @@ class Solution:
                 ans+=s[i]
                 ans+=s[i+1]
                 return ans
-                
-        if len(ans)==1:
-            return ""            
+
+                 
         return ans
 
         

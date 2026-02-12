@@ -3,16 +3,16 @@ class Solution:
         if len(nums)==0:
             return 0
         max_count=0
-        nums.sort()
-        count=0
-        for i in range(len(nums)-1):
-            if nums[i]==nums[i+1]:
-                continue
-            elif nums[i]+1==nums[i+1]:
-                count+=1
-            elif nums[i]+1!=nums[i+1]:
-                count=0
-            max_count=max(max_count,count)
+        set_nums=set(nums)
+        
+        for i in set_nums:
+            if (i-1) not in set_nums:
+                current=i
+                count=1
+                while current+1 in set_nums:
+                    count+=1
+                    current+=1
+                max_count=max(max_count,count)
 
-        return max_count+1
+        return max_count
         

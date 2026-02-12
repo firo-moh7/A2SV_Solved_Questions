@@ -1,14 +1,21 @@
 class Solution:
     def findValidPair(self, s: str) -> str:
         freq=Counter(s)
+        temp=[]
         if len(set(s))==1:
             return ""
         ans=""
 
         for i in range(len(s)):
-            if freq[s[i]]==int(s[i]):
-                if s[i] not in ans:
-                    ans+=s[i]
+             temp.append(freq[s[i]])
+        for i in range(len(s)-1):
+            if s[i]==s[i+1]:
+                continue
+            elif int(s[i])==temp[i] and int(s[i+1])==temp[i+1]:
+                ans+=s[i]
+                ans+=s[i+1]
+                return ans
+                
         if len(ans)==1:
             return ""            
         return ans

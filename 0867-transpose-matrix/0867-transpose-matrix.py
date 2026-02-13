@@ -2,11 +2,14 @@ class Solution:
     def transpose(self, matrix: List[List[int]]) -> List[List[int]]:
         row=len(matrix)
         column=len(matrix[0])
-        new_matrix=[[0]*row for i in range(column)]
+        new_matrix=[]
         
         for i in range(column):
+            l=[]
             for j in range(row):
-                new_matrix[i][j]=matrix[j][i]
+                l.append(matrix[j][i])
+            new_matrix.append(l)
+                
         return new_matrix
         
       

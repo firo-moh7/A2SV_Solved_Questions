@@ -1,12 +1,12 @@
 class Solution:
     def closeStrings(self, word1: str, word2: str) -> bool:
-        freq_w1=Counter(word1)
-        freq_w2=Counter(word2)
         if len(word1)!=len(word2):
             return False
         for i in word1:
             if i not in word2:
                 return False
+        freq_w1=Counter(word1)
+        freq_w2=Counter(word2)
         sorted_w1=[]
         sorted_w2=[]
         for i,j in freq_w1.items():

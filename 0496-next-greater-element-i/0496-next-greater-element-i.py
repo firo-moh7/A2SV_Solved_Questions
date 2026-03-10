@@ -4,9 +4,9 @@ class Solution:
         res=defaultdict(lambda:-1)
         for i in nums2:
             while stack and stack[-1]<i:
-                res[stack[0]]=i
+                res[stack[-1]]=i
                 stack.pop()
             stack.append(i)
-            
+
         return [res[i] for i in nums1]
         

@@ -5,9 +5,7 @@ class Solution:
             if stack and i=="../":
                 stack.pop()
                 continue
-            elif i=="./":
-                continue
-            elif i!="../":
+            elif i!="../" and i!="./":
                 stack.append(i)
         print(stack)
         return len(stack)

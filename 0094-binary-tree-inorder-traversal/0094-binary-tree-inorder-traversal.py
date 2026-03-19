@@ -10,7 +10,7 @@ class Solution:
         def inorder(root):
             if root:
                 inorder(root.left)
-                inorder(res.append(root.val))
+                res.append(root.val)
                 inorder(root.right)
                 
         inorder(root)

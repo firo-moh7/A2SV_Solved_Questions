@@ -3,8 +3,8 @@ class Solution:
         first_freq=Counter(nums)
         second_freq=defaultdict(int)
         n=len(nums)
-        
-        for index in range(len(nums)):
+
+        for index in range(n):
             num=nums[index]
             first_freq[num]-=1
             second_freq[num]+=1

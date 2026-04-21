@@ -4,7 +4,7 @@ class Solution:
 
         for i , char in enumerate(s):
             last_oc[char] = i
-        print(last_oc)
+    
         result = []
         start = 0
         end = 0

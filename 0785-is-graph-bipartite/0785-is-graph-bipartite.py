@@ -18,6 +18,8 @@ class Solution:
             if color == -1:
                 colors[i] = 0
                 res = res and dfs(i)
+                if not res:
+                    return False
             
         return res
         

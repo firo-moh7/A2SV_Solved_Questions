@@ -24,8 +24,8 @@ class Solution:
                 if inOrder[i] == 0:
                     q.append(i)
         
-        if len(order) == numCourses:
-            return order
+        if len(order) != numCourses:
+            return []
         
-        return []
+        return order
         
